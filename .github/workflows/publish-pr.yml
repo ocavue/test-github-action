@@ -23,7 +23,7 @@ jobs:
             try {
               const result = await github.pulls.get(request)
               core.info(`Got PR: ${JSON.stringify(result.data)}`)
-              if (result.data.head.repo.full_name !== 'remirror/remirror') {
+              if (result.data.head.repo.full_name !== 'ocavue/test-github-action') {
                 throw new Error(`this workflow is only allowed on the "remirror" repository`)
               }
               return result.data
